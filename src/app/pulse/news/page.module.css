@@ -1,0 +1,512 @@
+/* Nova News Theme Variables */
+.container {
+    --nova-bg: var(--surface-primary);
+    --nova-card-bg: var(--surface-card-solid);
+    --nova-cyan: var(--color-pulse-accent);
+    --nova-cyan-dim: var(--shadow-glow);
+    --nova-orange: var(--color-pulse-highlight);
+    --nova-orange-dim: rgba(255, 109, 0, 0.1);
+    --nova-text-main: var(--text-primary);
+    --nova-text-muted: var(--text-muted);
+    --nova-border: var(--border-primary);
+
+    background-color: var(--nova-bg);
+    color: var(--nova-text-main);
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    padding: 0 0 4rem 0;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    padding-right: 400px;
+    background: var(--surface-card);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--nova-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.titleSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.subtext {
+    font-size: 0.75rem;
+    color: var(--nova-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.controls {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Controls Components */
+.filterToggle,
+.modeToggle {
+    background: var(--nova-card-bg);
+    border: 1px solid var(--nova-border);
+    color: var(--nova-text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.filterToggle:hover,
+.modeToggle:hover {
+    color: var(--nova-text-main);
+    border-color: var(--text-secondary);
+}
+
+.filterToggle:focus-visible,
+.modeToggle:focus-visible {
+    outline: 2px solid var(--nova-cyan);
+    outline-offset: 2px;
+}
+
+.activeControl {
+    border-color: var(--nova-cyan);
+    color: var(--nova-cyan);
+    background: var(--nova-cyan-dim);
+}
+
+.saveIcon {
+    color: var(--nova-text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    background: var(--nova-card-bg);
+    border: 1px solid var(--nova-border);
+}
+
+.saveIcon:hover {
+    color: var(--nova-orange);
+    border-color: var(--nova-orange);
+}
+
+.saveCount {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--nova-orange);
+}
+
+/* Layout */
+.mainContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    padding-right: 400px;
+}
+
+.feedSection {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Daily Brief */
+.briefSection {
+    margin-bottom: 2rem;
+}
+
+.briefHeader {
+    font-size: 0.9rem;
+    color: var(--nova-orange);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.briefGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.briefCard {
+    background: var(--nova-card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.briefCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px var(--shadow-color);
+    border-color: var(--nova-border);
+}
+
+.briefCard:focus-visible {
+    outline: 2px solid var(--nova-orange);
+    outline-offset: 2px;
+}
+
+/* Streams */
+.streamSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.streamTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--nova-text-main);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.streamTitle::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: var(--nova-border);
+}
+
+.cardGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsCard {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    background: var(--nova-card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.newsCard:hover {
+    background: var(--surface-hover);
+    border-left-color: var(--nova-cyan);
+}
+
+.newsCard:focus-visible {
+    outline: 2px solid var(--nova-cyan);
+    outline-offset: 2px;
+}
+
+.deepCard {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    border-left-width: 4px;
+}
+
+.deepContentStub {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-primary);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.deepParagraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+}
+
+.biasBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--nova-orange);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sourceRef {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cardHeadline {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--nova-text-main);
+}
+
+.cardContext {
+    font-size: 0.95rem;
+    color: var(--nova-text-muted);
+    line-height: 1.5;
+}
+
+.cardMeta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    align-items: center;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--surface-hover);
+    color: var(--nova-text-muted);
+}
+
+.sourceMeta {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.sourceLink {
+    color: var(--nova-cyan);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sourceLink:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+.impactMeter {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.impactHigh {
+    background: #FF4444;
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.4);
+}
+
+.impactMed {
+    background: #FFAA00;
+}
+
+.impactLow {
+    background: #00CC66;
+}
+
+/* Context Panel - Fixed floating sidebar */
+.contextPanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 100vh;
+    background: var(--surface-card);
+    backdrop-filter: blur(12px);
+    border-left: 1px solid var(--nova-border);
+    padding: 2rem;
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: auto;
+    z-index: 90;
+    box-shadow: -4px 0 20px var(--shadow-color);
+}
+
+.panelHeader {
+    font-size: 0.8rem;
+    color: var(--nova-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--nova-border);
+    position: sticky;
+    top: -2rem;
+    background: var(--surface-card);
+    backdrop-filter: blur(8px);
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+}
+
+.panelContent {
+    animation: panelFadeIn 0.3s ease-out;
+}
+
+@keyframes panelFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panelSection {
+    margin-bottom: 1.5rem;
+}
+
+.panelTitle {
+    font-size: 0.85rem;
+    color: var(--nova-cyan);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.panelText {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.emptyPanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--nova-text-muted);
+    font-style: italic;
+    text-align: center;
+}
+
+/* Panel Actions */
+.panelActions {
+    margin-top: auto;
+    border-top: 1px solid var(--nova-border);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.readOriginalBtn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    color: var(--nova-cyan);
+    border: 1px solid var(--nova-cyan);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.readOriginalBtn:hover {
+    background: var(--nova-cyan-dim);
+    color: var(--text-primary);
+}
+
+.saveToForgeBtn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.saveToForgeBtn:hover {
+    background: var(--surface-hover);
+}
+
+.saveToForgeBtn.saved {
+    background: var(--nova-orange-dim);
+    color: var(--nova-orange);
+    border: 1px solid var(--nova-orange);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .header {
+        padding-right: 2rem;
+    }
+    
+    .mainContent {
+        padding-right: 2rem;
+    }
+    
+    .contextPanel {
+        display: none;
+    }
+}

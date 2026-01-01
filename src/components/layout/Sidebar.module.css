@@ -1,0 +1,106 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    padding: 6rem 1rem 2rem 1rem;
+    transition: transform 0.3s ease, width 0.3s ease, background 0.3s ease;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--surface-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid var(--border-primary);
+}
+
+.collapsed {
+    width: 60px;
+    padding: 6rem 0.5rem 2rem 0.5rem;
+}
+
+.toggleBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--surface-hover);
+    border: 1px solid var(--border-primary);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s;
+    opacity: 0;
+}
+
+.sidebar:hover .toggleBtn,
+.toggleBtn.pinned {
+    opacity: 1;
+}
+
+.toggleBtn:hover {
+    background: var(--color-nexus-accent);
+    color: white;
+    border-color: var(--color-nexus-accent);
+}
+
+.toggleBtn.pinned {
+    background: var(--color-nexus-accent);
+    color: white;
+    border-color: var(--color-nexus-accent);
+}
+
+.wings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.wingItem {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+}
+
+.wingItem:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+.wingIcon {
+    min-width: 24px;
+    display: flex;
+    justify-content: center;
+    color: inherit;
+}
+
+.wingLabel {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    color: inherit;
+}
+
+.collapsed .wingLabel {
+    opacity: 0;
+    width: 0;
+}
+
+/* Active state */
+.wingItem.active {
+    background: var(--color-nexus-accent);
+    color: white;
+}

@@ -1,0 +1,565 @@
+.container {
+    min-height: 100vh;
+    padding: 3.5rem 1.5rem 4rem;
+    background: var(--color-ember-bg);
+    color: var(--text-primary);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.heroIcon {
+    height: 64px;
+    width: 64px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--color-ember-primary), var(--color-ember-accent));
+    display: grid;
+    place-items: center;
+    color: white;
+    box-shadow: 0 12px 30px var(--shadow-color);
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    color: var(--color-ember-primary);
+    margin-bottom: 0.35rem;
+}
+
+.title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    max-width: 720px;
+    line-height: 1.6;
+}
+
+.heroFocus {
+    margin-top: 0.6rem;
+    color: var(--color-ember-accent);
+    font-weight: 600;
+}
+
+.heroMeta {
+    margin: 0.35rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.heroActions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.primaryButton {
+    background: linear-gradient(135deg, var(--color-ember-primary), var(--color-ember-accent));
+    color: white;
+    box-shadow: 0 12px 30px var(--shadow-color);
+}
+
+.primaryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px var(--shadow-color);
+}
+
+.secondaryButton {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+}
+
+.secondaryButton:hover {
+    transform: translateY(-2px);
+    background: var(--surface-card);
+}
+
+.nav {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.navChip {
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    background: var(--surface-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.navChip:hover {
+    background: var(--surface-card);
+    border-color: var(--color-ember-primary);
+    transform: translateY(-1px);
+}
+
+.section {
+    background: var(--surface-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 18px;
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 18px 50px var(--shadow-color);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.2rem 0;
+    color: var(--text-primary);
+}
+
+.sectionSubtitle {
+    color: var(--text-secondary);
+    max-width: 640px;
+    line-height: 1.6;
+}
+
+.gradeNav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.gradeChip {
+    padding: 0.45rem 0.7rem;
+    border-radius: 10px;
+    background: var(--surface-hover);
+    color: var(--color-ember-primary);
+    border: 1px solid var(--color-ember-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradeChip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px var(--shadow-color);
+}
+
+.gradeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.gradeCard {
+    padding: 1.1rem;
+    border-radius: 14px;
+    background: var(--surface-card-solid);
+    border: 1px solid var(--border-primary);
+    box-shadow: inset 0 1px 0 var(--surface-hover);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.gradeCardClosed {
+    padding-bottom: 0.75rem;
+}
+
+.gradeTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+    background: none;
+    border: none;
+    color: inherit;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+}
+
+.gradeBadge {
+    background: var(--surface-hover);
+    color: var(--color-ember-primary);
+    padding: 0.35rem 0.65rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.gradeFocus {
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+.highlightList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-secondary);
+    display: grid;
+    gap: 0.25rem;
+}
+
+.highlightList li {
+    position: relative;
+    padding-left: 1.1rem;
+}
+
+.highlightList li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-ember-primary);
+}
+
+.textLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-ember-primary);
+    font-weight: 600;
+    margin-top: 0.2rem;
+    transition: transform 0.2s ease;
+}
+
+.textLink:hover {
+    transform: translateX(2px);
+}
+
+.moduleGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.moduleCard {
+    background: var(--surface-hover);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    padding: 0.65rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    position: relative;
+}
+
+.moduleNumber {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ember-primary);
+    opacity: 0.85;
+}
+
+.moduleTitle {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+.viewAllLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-ember-primary);
+    margin-top: 0.25rem;
+    padding: 0.3rem 0.5rem;
+    background: var(--surface-hover);
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.viewAllLink:hover {
+    background: var(--surface-card);
+    transform: translateX(2px);
+}
+
+.moduleHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.moduleTitleLink {
+    font-weight: 700;
+    color: var(--color-ember-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.moduleList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.25rem;
+}
+
+.moduleLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--color-ember-primary);
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.moduleLink:hover {
+    transform: translateX(2px);
+}
+
+.callout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: 0 14px 38px var(--shadow-color);
+}
+
+.calloutTitle {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.calloutBody {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.toolsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.toolCard {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem;
+    background: var(--surface-hover);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toolCard:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-ember-primary);
+    box-shadow: 0 16px 28px var(--shadow-color);
+}
+
+.toolIcon {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background: var(--surface-card);
+    color: var(--color-ember-primary);
+    display: grid;
+    place-items: center;
+}
+
+.toolTitle {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.toolDesc {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.toolExternal {
+    color: var(--color-ember-primary);
+}
+
+.metronome {
+    margin-top: 1rem;
+    padding: 1.25rem;
+    border-radius: 14px;
+    background: var(--surface-card-solid);
+    border: 1px solid var(--border-primary);
+    box-shadow: 0 14px 36px var(--shadow-color);
+}
+
+.metronomeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tapButton {
+    background: var(--surface-hover);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
+    border-radius: 10px;
+    padding: 0.65rem 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.tapButton:hover {
+    transform: translateY(-1px);
+    background: var(--surface-card);
+}
+
+.metronomeControls {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.bpmDisplay {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 12px;
+    background: var(--surface-hover);
+    border: 1px solid var(--color-ember-primary);
+    min-width: 120px;
+}
+
+.bpmValue {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-ember-primary);
+}
+
+.bpmLabel {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.bpmSlider {
+    width: 100%;
+}
+
+.bpmActions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.bpmNumber {
+    width: 90px;
+    padding: 0.55rem 0.65rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-primary);
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.bpmActions button {
+    padding: 0.55rem 0.85rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-primary);
+    background: var(--surface-hover);
+    color: var(--text-primary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bpmActions button:hover {
+    transform: translateY(-1px);
+    background: var(--surface-card);
+}
+
+.playButton {
+    background: linear-gradient(135deg, var(--color-ember-primary), var(--color-ember-accent));
+    color: white;
+    border: none;
+    box-shadow: 0 12px 22px var(--shadow-color);
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+
+    .metronomeControls {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 2.5rem 1.1rem 3rem;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .gradeGrid,
+    .toolsGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,507 @@
+/* ===========================================
+   BOOKS PAGE - Continuous Flowing Bookcase
+   =========================================== */
+
+.container {
+    padding: 1rem 1.5rem;
+    min-height: 100vh;
+    background: var(--color-ember-bg);
+    color: var(--color-ember-text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Loading state */
+.loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 1rem;
+    color: var(--text-secondary);
+}
+
+.loadingIcon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    background: var(--surface-card-solid);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border-bottom: 2px solid var(--color-ember-primary);
+    box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.searchWrapper {
+    flex: 1;
+    min-width: 180px;
+    max-width: 280px;
+}
+
+.searchContainer {
+    position: relative;
+    width: 100%;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.6rem 2.25rem 0.6rem 1rem;
+    border-radius: 18px;
+    border: 1px solid var(--border-primary);
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-family: 'Georgia', serif;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.searchInput::placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.searchInput:focus {
+    border-color: var(--color-ember-primary);
+    box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.15);
+}
+
+.searchClear {
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--surface-hover);
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.searchClear:hover {
+    background: var(--color-ember-primary);
+    color: white;
+}
+
+.controls {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.statsButton {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 18px;
+    border: 1px solid var(--border-primary);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.statsButton:hover,
+.statsActive {
+    border-color: var(--color-ember-primary);
+    color: var(--color-ember-primary);
+    background: var(--surface-hover);
+}
+
+.statsCount {
+    font-family: 'Georgia', serif;
+}
+
+.addButton {
+    padding: 0.5rem 0.85rem;
+    border-radius: 18px;
+    border: none;
+    background: var(--color-ember-primary);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.addButton:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.primaryButton {
+    background: var(--color-ember-accent);
+    color: white;
+}
+
+.primaryButton:hover {
+    opacity: 0.9;
+}
+
+/* Tag filters */
+.tagFilters {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    padding: 0.6rem 1rem;
+    background: var(--surface-secondary);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+}
+
+.tagFilterLabel {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-right: 0.25rem;
+}
+
+.tagFilterBtn {
+    padding: 0.35rem 0.7rem;
+    background: var(--surface-hover);
+    border: 1px solid var(--border-primary);
+    border-radius: 14px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.tagFilterBtn:hover {
+    background: var(--surface-card-solid);
+    border-color: var(--color-ember-primary);
+    color: var(--color-ember-primary);
+}
+
+.tagFilterBtn.activeTag {
+    background: var(--color-ember-primary);
+    border-color: var(--color-ember-primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+.clearFilterBtn {
+    padding: 0.3rem 0.6rem;
+    background: transparent;
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-left: 0.25rem;
+}
+
+.clearFilterBtn:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+/* ===========================================
+   CONTINUOUS BOOKCASE
+   =========================================== */
+
+.bookcaseWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0 2rem 0;
+}
+
+.bookcase {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    background: linear-gradient(180deg, #2f1b0f, #1d1108);
+    border-radius: 3px;
+    box-shadow: 0 20px 60px rgba(9, 4, 2, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Bookcase side frames */
+.bookcaseFrameLeft,
+.bookcaseFrameRight {
+    width: 14px;
+    background: linear-gradient(180deg,
+        #5e3a21 0%,
+        #4d2b18 45%,
+        #3c1f12 55%,
+        #3c1f12 100%
+    );
+    flex-shrink: 0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.bookcaseFrameLeft {
+    border-radius: 3px 0 0 3px;
+    border-left: 1px solid var(--border-primary);
+}
+
+.bookcaseFrameRight {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid var(--border-primary);
+}
+
+/* Bookcase content - continuous flow */
+.bookcaseContent {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    min-height: 200px;
+    background: linear-gradient(125deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.22)), #2a1507;
+    border-left: 2px solid rgba(255, 255, 255, 0.06);
+    border-right: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Empty state */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--surface-card-solid);
+    border-radius: 10px;
+    border: 2px dashed var(--border-primary);
+    color: var(--text-secondary);
+    max-width: 350px;
+    margin: 3rem auto;
+    gap: 0.75rem;
+}
+
+.emptyState h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.emptyState p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.emptyAddButton {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--color-ember-primary);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.emptyAddButton:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Modal styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-bg);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.addModal {
+    position: relative;
+    background: var(--surface-card-solid);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 16px 50px var(--shadow-color);
+    border: 1px solid var(--border-primary);
+}
+
+.modalClose {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.2rem;
+    transition: color 0.2s;
+}
+
+.modalClose:hover {
+    color: var(--text-primary);
+}
+
+.modalTitle {
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-ember-primary);
+    text-align: center;
+}
+
+.modalHint {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.formInput {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.7rem;
+    border: 1px solid var(--border-primary);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: var(--color-ember-primary);
+    box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.1);
+}
+
+.formInput option {
+    background: var(--surface-card-solid);
+    color: var(--text-primary);
+}
+
+.formRow {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.formRow .formInput {
+    flex: 1;
+}
+
+.modalButtons {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.submitButton {
+    flex: 1;
+    padding: 0.7rem;
+    background: var(--color-ember-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submitButton:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cancelButton {
+    flex: 1;
+    padding: 0.7rem;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelButton:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.75rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem;
+    }
+
+    .searchWrapper {
+        max-width: none;
+        width: 100%;
+    }
+
+    .controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .addButton {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .bookcaseFrameLeft,
+    .bookcaseFrameRight {
+        width: 10px;
+    }
+
+    .addModal {
+        padding: 1.25rem;
+    }
+}

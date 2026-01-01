@@ -1,0 +1,42 @@
+{
+  "name": "mewebapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test:nexus": "tsx --test __tests__/nexus.test.ts",
+    "fetch-teaser": "node scripts/fetch-brainly-teasers.js",
+    "scrape-justinguitar": "node scripts/scrape-justinguitar.js"
+  },
+  "dependencies": {
+    "@types/react-datepicker": "^6.2.0",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "framer-motion": "^12.23.25",
+    "puppeteer": "^23.8.0",
+    "imap-simple": "^5.0.2",
+    "lucide-react": "^0.555.0",
+    "mailparser": "^3.6.0",
+    "next": "16.0.7",
+    "react": "19.2.0",
+    "react-datepicker": "^8.10.0",
+    "react-dom": "19.2.0",
+    "recharts": "^3.6.0",
+    "sass": "^1.94.2",
+    "slate": "^0.120.0",
+    "slate-history": "^0.113.1",
+    "slate-react": "^0.120.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
+}

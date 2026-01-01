@@ -1,0 +1,109 @@
+.bookshelf {
+    /* Remove gradient, keep simple to let main background shine or use subtle texture if needed */
+    background: rgba(42, 31, 23, 0.5);
+    /* Semi-transparent dark wash */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
+    border: 1px solid #9C6A3E;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E09F3E;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon {
+    font-size: 2rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F5EAD9;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.addSeriesBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #4A3426;
+    color: #F5EAD9;
+    border: 1px solid #9C6A3E;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.addSeriesBtn:hover {
+    background: #6A4A32;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Asymmetric masonry grid */
+.frame {
+    /* Remove conflicting frame background, let the shelves sit against the dark/semi-dark bg */
+    background: transparent;
+    padding: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    grid-auto-flow: dense;
+}
+
+/* Empty state */
+.grid:empty::after {
+    content: 'No series yet. Click "Add Series" to start building your collection!';
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: #9C6A3E;
+    font-style: italic;
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .bookshelf {
+        padding: 12px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

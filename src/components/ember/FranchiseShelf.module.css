@@ -1,0 +1,60 @@
+.shelf {
+    margin-bottom: 2rem;
+}
+
+.shelfHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.shelfTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.shelfTitle h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.type {
+    font-size: 0.875rem;
+    color: #B3B3B3;
+    background: #2F2F2F;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+.addBtn {
+    background: none;
+    border: 1px solid #404040;
+    color: #B3B3B3;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.addBtn:hover {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    background: #2F2F2F;
+}
+
+.collections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

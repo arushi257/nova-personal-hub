@@ -1,0 +1,281 @@
+/* ============================================
+   THEME SYSTEM - CSS Custom Properties
+   ============================================ */
+
+:root {
+  /* === DARK THEME (Default) === */
+  
+  /* Nexus (Default/Global) - Dark */
+  --color-nexus-primary: #0C0F14;
+  --color-nexus-secondary: #1A1F27;
+  --color-nexus-accent: #3AAFFF;
+  --color-nexus-accent-glow: #60BFFF;
+  --color-nexus-accent-2: #A06BFF;
+  --color-nexus-accent-2-glow: #B88AFF;
+  --color-nexus-text: #E8ECF1;
+
+  /* Ember - Dark */
+  --color-ember-primary: #FF4D4D;
+  --color-ember-secondary: #2C0A0A;
+  --color-ember-bg: #1A0D0D;
+  --color-ember-accent: #FF8A8A;
+  --color-ember-accent-glow: #FFB4B4;
+  --color-ember-text: #F5EAD9;
+
+  /* Quark - Dark */
+  --color-quark-primary: #0E0E0F;
+  --color-quark-secondary: #3A3A3C;
+  --color-quark-bg: #0F172A;
+  --color-quark-accent: #2F80ED;
+  --color-quark-accent-glow: #569AFF;
+  --color-quark-text: #E2E8F0;
+
+  /* Pulse - Dark */
+  --color-pulse-primary: #0F0F10;
+  --color-pulse-secondary: #1A1A1C;
+  --color-pulse-accent: #00E5FF;
+  --color-pulse-accent-glow: #FF7E4B;
+  --color-pulse-highlight: #34D399;
+  --color-pulse-text: #FFFFFF;
+
+  /* Forge - Dark */
+  --color-forge-primary: #1A1802;
+  --color-forge-secondary: #3F4C57;
+  --color-forge-bg: #000000;
+  --color-forge-accent: #FFD700;
+  --color-forge-accent-glow: #FFFF00;
+  --color-forge-lime: #A3FF6A;
+  --color-forge-orange: #FF9F40;
+  --color-forge-purple: #9B51E0;
+
+  /* Global Surface Colors - Dark */
+  --background: var(--color-nexus-primary);
+  --foreground: var(--color-nexus-text);
+  --surface-primary: #0C0F14;
+  --surface-secondary: #1A1F27;
+  --surface-tertiary: #252B35;
+  --surface-card: rgba(26, 31, 39, 0.4);
+  --surface-card-solid: #1A1F27;
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.05);
+  --text-primary: #E8ECF1;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-glow: rgba(58, 175, 255, 0.15);
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+}
+
+/* === LIGHT THEME === */
+[data-theme="light"] {
+  /* Nexus (Global) - Light */
+  --color-nexus-primary: #F8FAFC;
+  --color-nexus-secondary: #FFFFFF;
+  --color-nexus-accent: #2563EB;
+  --color-nexus-accent-glow: #3B82F6;
+  --color-nexus-accent-2: #7C3AED;
+  --color-nexus-accent-2-glow: #8B5CF6;
+  --color-nexus-text: #1E293B;
+
+  /* Ember - Light */
+  --color-ember-primary: #F44444;
+  --color-ember-secondary: #FFF0E7;
+  --color-ember-bg: #FFF8F6;
+  --color-ember-accent: #F87171;
+  --color-ember-accent-glow: #FCA5A5;
+  --color-ember-text: #451A03;
+
+  /* Quark - Light */
+  --color-quark-primary: #F0F7FF;
+  --color-quark-secondary: #FFFFFF;
+  --color-quark-bg: #F8FAFC;
+  --color-quark-accent: #2563EB;
+  --color-quark-accent-glow: #3B82F6;
+  --color-quark-text: #1E293B;
+
+  /* Pulse - Light */
+  --color-pulse-primary: #F0FDF4;
+  --color-pulse-secondary: #FFFFFF;
+  --color-pulse-accent: #059669;
+  --color-pulse-accent-glow: #10B981;
+  --color-pulse-highlight: #059669;
+  --color-pulse-text: #1E293B;
+
+  /* Forge - Light */
+  --color-forge-primary: #FFFBEB;
+  --color-forge-secondary: #FFFFFF;
+  --color-forge-bg: #FFFBEB;
+  --color-forge-accent: #D97706;
+  --color-forge-accent-glow: #F59E0B;
+  --color-forge-lime: #65A30D;
+  --color-forge-orange: #EA580C;
+  --color-forge-purple: #7C3AED;
+
+  /* Global Surface Colors - Light */
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F1F5F9;
+  --surface-tertiary: #E2E8F0;
+  --surface-card: rgba(255, 255, 255, 0.9);
+  --surface-card-solid: #FFFFFF;
+  --surface-hover: rgba(0, 0, 0, 0.04);
+  --border-primary: #E2E8F0;
+  --border-secondary: #F1F5F9;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-glow: rgba(37, 99, 235, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Glass Panel - Dark Theme */
+.glass-panel {
+  background: var(--surface-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Glass Panel - Light (explicit) */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Card Styles */
+.card {
+  background: var(--surface-card-solid);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+/* Status Colors - Universal */
+.status-todo { background: #6574FF; color: #FFFFFF; }
+.status-in-progress { background: #FF9A3C; color: #FFFFFF; }
+.status-completed, .status-done { background: #41C28C; color: #FFFFFF; }
+.status-blocked { background: #E55757; color: #FFFFFF; }
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-nexus-accent);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-nexus-accent);
+  color: white;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

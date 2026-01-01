@@ -1,0 +1,56 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    gap: 2rem;
+    padding: 0.75rem 2rem;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    background: var(--surface-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-primary);
+    border-radius: 50px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.link {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.link:hover {
+    transform: scale(1.2);
+    background-color: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+.active {
+    background-color: var(--color-nexus-accent);
+    color: white;
+    box-shadow: 0 0 15px var(--shadow-glow);
+}
+
+.active:hover {
+    color: white;
+}

@@ -1,0 +1,68 @@
+
+[
+  {
+    "date": "2025-12-21",
+    "title": "Consecutive Double Letters 2",
+    "category": "Language",
+    "description": "Fill in the blanks to find words that have two sets of double letters in a row.",
+    "source": "Braingle Daily Brain Teaser",
+    "isDaily": true,
+    "clues": [
+      {
+        "prompt": "A woodwind instrument that dates back to the mid 16th century.",
+        "pattern": "B_____N",
+        "tier": "Main"
+      },
+      {
+        "prompt": "A sweet treat that is sometimes made with nuts or raisins.",
+        "pattern": "T____E",
+        "tier": "Main"
+      },
+      {
+        "prompt": "A term that can be used to describe boats and ships.",
+        "pattern": "K_______S",
+        "tier": "Main"
+      },
+      {
+        "prompt": "A character in a courtroom.",
+        "pattern": "A______E",
+        "tier": "Main"
+      },
+      {
+        "prompt": "A Belgian language.",
+        "pattern": "W_____N",
+        "tier": "Expert"
+      },
+      {
+        "prompt": "This word has 3 consecutive double letters!",
+        "pattern": "B________R",
+        "tier": "Fun"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-20",
+    "title": "Symmetry Sleuth",
+    "category": "Logic",
+    "description": "Decode the mirror pair that shares the same beginning and ending letter.",
+    "source": "Curated",
+    "clues": [
+      {
+        "prompt": "A five-letter musical term that reads the same forwards and backwards.",
+        "pattern": "C___C",
+        "tier": "Main"
+      },
+      {
+        "prompt": "A number that swings between the same digit twice.",
+        "pattern": "__11__",
+        "tier": "Main"
+      },
+      {
+        "prompt": "The word for a long-billed wading bird that ends the way it begins.",
+        "pattern": "S____S",
+        "tier": "Fun"
+      }
+    ]
+  }
+]
+

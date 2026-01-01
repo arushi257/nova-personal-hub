@@ -1,0 +1,333 @@
+[
+  {
+    "id": "grade-1",
+    "title": "Grade 1",
+    "url": "https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-1",
+    "modules": [
+      {
+        "title": "Before You Begin: Guitar Basics",
+        "url": "https://www.justinguitar.com/modules/before-you-begin-guitar-basics",
+        "slug": "before-you-begin-guitar-basics",
+        "lessons": []
+      },
+      {
+        "title": "A & D Chords: Play Your First Song!",
+        "url": "https://www.justinguitar.com/modules/a-d-chords-play-your-first-song",
+        "slug": "a-d-chords-play-your-first-song",
+        "lessons": []
+      },
+      {
+        "title": "Rhythm & Chord Changes + Your First Riff!",
+        "url": "https://www.justinguitar.com/modules/module-2-the-e-gunn",
+        "slug": "module-2-the-e-gunn",
+        "lessons": []
+      },
+      {
+        "title": "Capo, Minor Chords & Up Strums",
+        "url": "https://www.justinguitar.com/modules/capo-minor-chords-up-strums",
+        "slug": "capo-minor-chords-up-strums",
+        "lessons": []
+      },
+      {
+        "title": "Metronome, Stretches & THE Pattern",
+        "url": "https://www.justinguitar.com/modules/metronome-stretches-the-pattern",
+        "slug": "metronome-stretches-the-pattern",
+        "lessons": []
+      },
+      {
+        "title": "Basic Theory & Strumming Development",
+        "url": "https://www.justinguitar.com/modules/basic-theory-strumming-development",
+        "slug": "basic-theory-strumming-development",
+        "lessons": []
+      },
+      {
+        "title": "6:8 Time, Fast Changes & Alternate Picking",
+        "url": "https://www.justinguitar.com/modules/6-8-time-fast-changes-alternate-picking",
+        "slug": "6-8-time-fast-changes-alternate-picking",
+        "lessons": []
+      },
+      {
+        "title": "Air Changes, Dynamics & Consolidation!",
+        "url": "https://www.justinguitar.com/modules/air-changes-dynamics-consolidation",
+        "slug": "air-changes-dynamics-consolidation",
+        "lessons": []
+      }
+    ]
+  },
+  {
+    "id": "grade-2",
+    "title": "Grade 2",
+    "url": "https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-2",
+    "modules": [
+      {
+        "title": "Your First Scale, Pick Tricks & 8th Note Strumming",
+        "url": "https://www.justinguitar.com/modules/your-first-scale-pick-tricks-8th-note-strumming",
+        "slug": "your-first-scale-pick-tricks-8th-note-strumming",
+        "lessons": []
+      },
+      {
+        "title": "The F Chord Journey & Pinky Workout",
+        "url": "https://www.justinguitar.com/modules/the-f-chord-journey-pinky-workout",
+        "slug": "the-f-chord-journey-pinky-workout",
+        "lessons": []
+      },
+      {
+        "title": "Alternate Picking, Hammer-Ons, and Improvisation!",
+        "url": "https://www.justinguitar.com/modules/alternate-picking-hammer-ons-and-improvisation",
+        "slug": "alternate-picking-hammer-ons-and-improvisation",
+        "lessons": []
+      },
+      {
+        "title": "Fingerstyle & Songwriting First Steps",
+        "url": "https://www.justinguitar.com/modules/fingerstyle-songwriting-first-steps",
+        "slug": "fingerstyle-songwriting-first-steps",
+        "lessons": []
+      },
+      {
+        "title": "Rock Power Chords & Techniques for Beginners",
+        "url": "https://www.justinguitar.com/modules/rock-power-chords-techniques-for-beginners",
+        "slug": "rock-power-chords-techniques-for-beginners",
+        "lessons": []
+      },
+      {
+        "title": "Blues Guitar & Easy Improvisation",
+        "url": "https://www.justinguitar.com/modules/blues-guitar-easy-improvisation",
+        "slug": "blues-guitar-easy-improvisation",
+        "lessons": []
+      },
+      {
+        "title": "Beginners: Get a PRO Upgrade!",
+        "url": "https://www.justinguitar.com/modules/beginners-get-a-pro-upgrade",
+        "slug": "beginners-get-a-pro-upgrade",
+        "lessons": []
+      }
+    ]
+  },
+  {
+    "id": "grade-3",
+    "title": "Grade 3",
+    "url": "https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-3",
+    "modules": [
+      {
+        "title": "Practice Better & Finger Gym Exercise",
+        "url": "https://www.justinguitar.com/modules/practice-better-finger-gym-exercise",
+        "slug": "practice-better-finger-gym-exercise",
+        "lessons": []
+      },
+      {
+        "title": "Playing Melodies & Moving Chords Up",
+        "url": "https://www.justinguitar.com/modules/playing-melodies-moving-chords-up",
+        "slug": "playing-melodies-moving-chords-up",
+        "lessons": []
+      },
+      {
+        "title": "Finger Strums, Triads, & The Musician In You",
+        "url": "https://www.justinguitar.com/modules/finger-strums-triads-the-musician-in-you",
+        "slug": "finger-strums-triads-the-musician-in-you",
+        "lessons": []
+      },
+      {
+        "title": "Blues, Chips & Open Tuning",
+        "url": "https://www.justinguitar.com/modules/blues-chips-open-tuning",
+        "slug": "blues-chips-open-tuning",
+        "lessons": []
+      },
+      {
+        "title": "Master Song Practice & Learn to Sing",
+        "url": "https://www.justinguitar.com/modules/master-song-practice-learn-to-sing",
+        "slug": "master-song-practice-learn-to-sing",
+        "lessons": []
+      },
+      {
+        "title": "Chords in Keys Made Easy!",
+        "url": "https://www.justinguitar.com/modules/chords-in-keys-made-easy",
+        "slug": "chords-in-keys-made-easy",
+        "lessons": []
+      },
+      {
+        "title": "Double Strumming, Vibrato & Rut Busters!",
+        "url": "https://www.justinguitar.com/modules/double-strumming-vibrato-rut-busters",
+        "slug": "double-strumming-vibrato-rut-busters",
+        "lessons": []
+      },
+      {
+        "title": "Beginner Consolidation & Easy Barre Chords",
+        "url": "https://www.justinguitar.com/modules/beginner-consolidation-easy-barre-chords",
+        "slug": "beginner-consolidation-easy-barre-chords",
+        "lessons": []
+      }
+    ]
+  },
+  {
+    "id": "grade-4",
+    "title": "Grade 4",
+    "url": "https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-4",
+    "modules": [
+      {
+        "title": "E Shape Barre Chords",
+        "url": "https://www.justinguitar.com/modules/e-shape-barre-chords",
+        "slug": "e-shape-barre-chords",
+        "lessons": []
+      },
+      {
+        "title": "Major Scale Maestro 1",
+        "url": "https://www.justinguitar.com/modules/major-scale-maestro-1",
+        "slug": "major-scale-maestro-1",
+        "lessons": []
+      },
+      {
+        "title": "Rhythm Maestro",
+        "url": "https://www.justinguitar.com/modules/rhythm-maestro",
+        "slug": "rhythm-maestro",
+        "lessons": []
+      },
+      {
+        "title": "Blues Guitar Studies",
+        "url": "https://www.justinguitar.com/modules/blues-guitar-studies",
+        "slug": "blues-guitar-studies",
+        "lessons": []
+      },
+      {
+        "title": "Essential Blues Lead Guitar",
+        "url": "https://www.justinguitar.com/modules/essential-blues-lead-guitar",
+        "slug": "essential-blues-lead-guitar",
+        "lessons": []
+      },
+      {
+        "title": "Blues Licks",
+        "url": "https://www.justinguitar.com/modules/blues-licks",
+        "slug": "blues-licks",
+        "lessons": []
+      }
+    ]
+  },
+  {
+    "id": "grade-5",
+    "title": "Grade 5",
+    "url": "https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-5",
+    "modules": [
+      {
+        "title": "A Shape Barre Chords",
+        "url": "https://www.justinguitar.com/modules/a-shape-barre-chords",
+        "slug": "a-shape-barre-chords",
+        "lessons": []
+      },
+      {
+        "title": "Major Scale Maestro 2",
+        "url": "https://www.justinguitar.com/modules/major-scale-maestro-2",
+        "slug": "major-scale-maestro-2",
+        "lessons": []
+      },
+      {
+        "title": "Folk Fingerstyle",
+        "url": "https://www.justinguitar.com/modules/folk-fingerstyle",
+        "slug": "folk-fingerstyle",
+        "lessons": []
+      },
+      {
+        "title": "Transcribing Blues Solos",
+        "url": "https://www.justinguitar.com/modules/transcribing-blues-solos",
+        "slug": "transcribing-blues-solos",
+        "lessons": []
+      }
+    ]
+  },
+  {
+    "id": "grade-6",
+    "title": "Grade 6",
+    "url": "https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-6",
+    "modules": [
+      {
+        "title": "Blues Solos All Over",
+        "url": "https://www.justinguitar.com/modules/blues-solos-all-over",
+        "slug": "blues-solos-all-over",
+        "lessons": []
+      },
+      {
+        "title": "Colouring The Blues",
+        "url": "https://www.justinguitar.com/modules/colouring-the-blues",
+        "slug": "colouring-the-blues",
+        "lessons": []
+      },
+      {
+        "title": "Essential Blues Rhythm",
+        "url": "https://www.justinguitar.com/modules/essential-blues-rhythm",
+        "slug": "essential-blues-rhythm",
+        "lessons": []
+      },
+      {
+        "title": "Blues Rhythm Fun",
+        "url": "https://www.justinguitar.com/modules/blues-rhythm-fun",
+        "slug": "blues-rhythm-fun",
+        "lessons": []
+      },
+      {
+        "title": "Funk Guitar Course",
+        "url": "https://www.justinguitar.com/modules/funk-guitar-course",
+        "slug": "funk-guitar-course",
+        "lessons": []
+      },
+      {
+        "title": "Jazz Introduction & Basics",
+        "url": "https://www.justinguitar.com/modules/jazz-introduction-basics",
+        "slug": "jazz-introduction-basics",
+        "lessons": []
+      },
+      {
+        "title": "Jazz Standards",
+        "url": "https://www.justinguitar.com/modules/jazz-standards",
+        "slug": "jazz-standards",
+        "lessons": []
+      },
+      {
+        "title": "Jazz Chord Extensions & Alterations",
+        "url": "https://www.justinguitar.com/modules/jazz-chord-extensions-alterations",
+        "slug": "jazz-chord-extensions-alterations",
+        "lessons": []
+      }
+    ]
+  },
+  {
+    "id": "grade-7",
+    "title": "Grade 7",
+    "url": "https://www.justinguitar.com/categories/intermediate-guitar-lessons-grade-7",
+    "modules": [
+      {
+        "title": "Rhythm Fills: Mayfield & Hendrix Style",
+        "url": "https://www.justinguitar.com/modules/rhythm-fills-mayfield-hendrix-style",
+        "slug": "rhythm-fills-mayfield-hendrix-style",
+        "lessons": []
+      },
+      {
+        "title": "Making The Blues Changes",
+        "url": "https://www.justinguitar.com/modules/making-the-blues-changes",
+        "slug": "making-the-blues-changes",
+        "lessons": []
+      },
+      {
+        "title": "Jazz Up Your Blues",
+        "url": "https://www.justinguitar.com/modules/jazz-up-your-blues",
+        "slug": "jazz-up-your-blues",
+        "lessons": []
+      },
+      {
+        "title": "Jazz Chord Tricks",
+        "url": "https://www.justinguitar.com/modules/jazz-chord-tricks",
+        "slug": "jazz-chord-tricks",
+        "lessons": []
+      },
+      {
+        "title": "Jazz Harmony & Concepts",
+        "url": "https://www.justinguitar.com/modules/jazz-harmony-concepts",
+        "slug": "jazz-harmony-concepts",
+        "lessons": []
+      },
+      {
+        "title": "Jazz Lead 1",
+        "url": "https://www.justinguitar.com/modules/jazz-lead-1",
+        "slug": "jazz-lead-1",
+        "lessons": []
+      }
+    ]
+  }
+]

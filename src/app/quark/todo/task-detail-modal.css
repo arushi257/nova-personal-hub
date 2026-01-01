@@ -1,0 +1,228 @@
+/* Task Detail Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    animation: fadeIn 0.2s;
+}
+
+.taskDetailModal {
+    background: white;
+    border-radius: 16px;
+    width: 600px;
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detailHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 2px solid #E4E6EB;
+}
+
+.detailTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1C1E21;
+    margin: 0;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    background: #F0F2F5;
+    color: #000;
+}
+
+.detailContent {
+    padding: 2rem;
+}
+
+.detailSection {
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #5F6368;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detailGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.detailItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detailLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6F7175;
+    text-transform: uppercase;
+}
+
+.detailValue {
+    font-size: 0.95rem;
+    color: #1C1E21;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    background: #F7F8FA;
+    border-radius: 6px;
+}
+
+.detailValue[data-status="To Do"] {
+    background: #6574FF;
+    color: white;
+}
+
+.detailValue[data-status="In Progress"] {
+    background: #FF9A3C;
+    color: white;
+}
+
+.detailValue[data-status="Completed"],
+.detailValue[data-status="Done"] {
+    background: #41C28C;
+    color: white;
+}
+
+.detailValue[data-status="Blocked"] {
+    background: #E55757;
+    color: white;
+}
+
+.descriptionText {
+    font-size: 0.95rem;
+    color: #1C1E21;
+    line-height: 1.6;
+    padding: 1rem;
+    background: #F7F8FA;
+    border-radius: 8px;
+    white-space: pre-wrap;
+}
+
+.notesDisplay {
+    background: #F7F8FA;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.noteItem {
+    font-size: 0.875rem;
+    color: #1C1E21;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #E4E6EB;
+}
+
+.noteItem:last-child {
+    border-bottom: none;
+}
+
+.addNoteSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.noteInput {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #E4E6EB;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.noteInput:focus {
+    border-color: #3C78FF;
+    box-shadow: 0 0 0 4px rgba(60, 120, 255, 0.1);
+}
+
+.addNoteBtn {
+    align-self: flex-end;
+    padding: 0.75rem 1.5rem;
+    background: #3C78FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.addNoteBtn:hover:not(:disabled) {
+    background: #2B5FCC;
+    transform: translateY(-1px);
+}
+
+.addNoteBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.editTaskBtn {
+    width: 100%;
+    padding: 1rem;
+    background: #F7F8FA;
+    border: 2px solid #E4E6EB;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #3C78FF;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+}
+
+.editTaskBtn:hover {
+    background: #3C78FF;
+    color: white;
+    border-color: #3C78FF;
+}

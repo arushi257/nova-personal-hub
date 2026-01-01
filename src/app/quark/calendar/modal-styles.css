@@ -1,0 +1,97 @@
+/* Modal Styles for Task Creation */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    min-width: 400px;
+    max-width: 90%;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-quark-text);
+    margin: 0 0 0.5rem;
+}
+
+.modalSubtitle {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0 0 1.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-quark-text);
+    margin-bottom: 0.5rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    border-color: var(--color-quark-accent);
+    box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.1);
+}
+
+.modalActions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.cancelBtn,
+.submitBtn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelBtn {
+    background: #E0E0E0;
+    color: #666;
+}
+
+.cancelBtn:hover {
+    background: #CCC;
+}
+
+.submitBtn {
+    background: var(--color-quark-accent);
+    color: white;
+}
+
+.submitBtn:hover {
+    background: #2B5FCC;
+}

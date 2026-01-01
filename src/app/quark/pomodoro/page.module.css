@@ -1,0 +1,475 @@
+/* Base container with state-based gradients */
+.container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: gradientDrift 60s ease infinite;
+    background-size: 200% 200%;
+}
+
+/* Focus mode - Midnight Blue → Indigo */
+.container.focus {
+    background: linear-gradient(135deg, #1A1F3A 0%, #2D3561 50%, #3F51B5 100%);
+}
+
+/* Short Break - Deep Purple → Soft Teal */
+.container.shortBreak {
+    background: linear-gradient(135deg, #4A3B5C 0%, #5EBAA7 100%);
+}
+
+/* Long Break - Violet → Warm Rose → Ember Gold */
+.container.longBreak {
+    background: linear-gradient(135deg, #6B4E9A 0%, #C97E8E 50%, #F4A261 100%);
+}
+
+/* Gradient drift animation */
+@keyframes gradientDrift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Atmospheric Layers */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.02;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 33% 80%, white, transparent);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    animation: particleDrift 40s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes particleDrift {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    100% {
+        transform: translateY(-10px) translateX(10px);
+    }
+}
+
+/* Vignette with breathing effect */
+.vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.3);
+    animation: vignetteBreathe 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes vignetteBreathe {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Main Content */
+.content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Mode Tabs */
+.modeTabs {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    padding: 0.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.modeTab {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+}
+
+.modeTab:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modeTab.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Timer Card */
+.timerCard {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progressRing {
+    position: absolute;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+/* Electric Cyan glow for focus */
+.container.focus .progressRingProgress {
+    color: #00D9FF;
+}
+
+/* Mint glow for short break */
+.container.shortBreak .progressRingProgress {
+    color: #A8E6CF;
+}
+
+/* Gold glow for long break */
+.container.longBreak .progressRingProgress {
+    color: #FFD700;
+}
+
+.progressRingProgress {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-linecap: round;
+}
+
+.timerContent {
+    text-align: center;
+    z-index: 1;
+}
+
+.timeDisplay {
+    font-size: 4rem;
+    font-weight: 300;
+    color: #FFFFFF;
+    letter-spacing: 0.1em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    font-variant-numeric: tabular-nums;
+}
+
+.modeLabel {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.2em;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.controlBtn {
+    padding: 1rem 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.controlBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.controlBtn.primary {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Session Counter */
+.sessionCounter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    flex-wrap: wrap;
+}
+
+.counterLabel {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+.counterValue {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.endSessionBtn {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 87, 87, 0.2);
+    border: 1px solid rgba(255, 87, 87, 0.4);
+    color: #FF8787;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.endSessionBtn:hover {
+    background: rgba(255, 87, 87, 0.3);
+    border-color: rgba(255, 87, 87, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Settings Button */
+.settingsBtn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+    z-index: 1500;
+}
+
+.settingsBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Settings Sidebar */
+.settingsSidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: rgba(26, 31, 58, 0.98);
+    backdrop-filter: blur(30px);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2000;
+    overflow-y: auto;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.settingsSidebar.open {
+    right: 0;
+}
+
+.sidebarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarHeader h2 {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.sidebarContent {
+    padding: 2rem;
+}
+
+.settingGroup {
+    margin-bottom: 2rem;
+}
+
+.settingGroup label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #00D9FF;
+}
+
+.settingGroup label span {
+    flex: 1;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.inputGroup input {
+    flex: 1;
+    padding: 0.875rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: #00D9FF;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+}
+
+.inputGroup span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+}
+
+.settingInfo {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.settingInfo p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+    }
+
+    .timeDisplay {
+        font-size: 3rem;
+    }
+
+    .timerCard {
+        width: 280px;
+        height: 280px;
+    }
+
+    .progressRing {
+        width: 280px;
+        height: 280px;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .controlBtn {
+        width: 100%;
+    }
+
+    .settingsSidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .settingsSidebar.open {
+        right: 0;
+    }
+}

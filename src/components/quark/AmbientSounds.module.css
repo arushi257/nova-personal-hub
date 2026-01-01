@@ -1,0 +1,108 @@
+.container {
+    margin-top: 3rem;
+}
+
+.title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.soundOptions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.soundCard {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+}
+
+.soundCard:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active state with specific glows */
+.soundCard.active {
+    border-color: currentColor;
+    box-shadow: 0 0 20px currentColor, 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Rain - Teal glow */
+.soundCard:nth-child(1) {
+    color: #A8E6CF;
+}
+
+.soundCard:nth-child(1).active {
+    background: linear-gradient(135deg, rgba(94, 186, 167, 0.2), rgba(168, 230, 207, 0.1));
+    box-shadow: 0 0 20px rgba(168, 230, 207, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Café - Rose glow */
+.soundCard:nth-child(2) {
+    color: #E8858B;
+}
+
+.soundCard:nth-child(2).active {
+    background: linear-gradient(135deg, rgba(232, 133, 139, 0.2), rgba(201, 126, 142, 0.1));
+    box-shadow: 0 0 20px rgba(232, 133, 139, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Fireplace - Gold glow */
+.soundCard:nth-child(3) {
+    color: #F4A261;
+}
+
+.soundCard:nth-child(3).active {
+    background: linear-gradient(135deg, rgba(244, 162, 97, 0.2), rgba(255, 215, 0, 0.1));
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+    .soundOptions {
+        gap: 0.75rem;
+    }
+
+    .soundCard {
+        padding: 0.75rem 1rem;
+        min-width: 80px;
+    }
+
+    .icon {
+        font-size: 1.25rem;
+    }
+
+    .label {
+        font-size: 0.65rem;
+    }
+}

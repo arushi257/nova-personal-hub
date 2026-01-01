@@ -1,0 +1,563 @@
+.page {
+  --travel-gradient-start: #030b1c;
+  --travel-gradient-end: #041c3d;
+  --travel-surface: rgba(6, 23, 52, 0.85);
+  --travel-card: rgba(8, 24, 49, 0.9);
+  --travel-border: rgba(125, 211, 252, 0.25);
+  --travel-accent: #7dd3fc;
+  --travel-accent-2: #facc15;
+  --travel-shadow: 0 35px 60px rgba(3, 6, 20, 0.6);
+  --travel-text: #f5f8ff;
+  color: var(--travel-text);
+  padding: 2rem 2rem 4rem;
+  background: radial-gradient(circle at top right, rgba(252, 193, 21, 0.08), transparent 45%),
+    linear-gradient(145deg, var(--travel-gradient-start), var(--travel-gradient-end));
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.subtext {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.mainTitle {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+}
+
+.description {
+  color: var(--text-secondary);
+  max-width: 60ch;
+}
+
+.glassButton {
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--travel-accent), var(--travel-accent-2));
+  color: #031029;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 25px rgba(125, 211, 252, 0.4);
+}
+
+.glassButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(125, 211, 252, 0.5);
+}
+
+.addTripSection {
+  background: var(--travel-card);
+  border-radius: 16px;
+  padding: 1.75rem;
+  border: 1px solid var(--travel-border);
+  margin-bottom: 2rem;
+  box-shadow: var(--travel-shadow);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.smallLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+.textInput,
+.textArea,
+.select {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--travel-text);
+  padding: 0.65rem 0.8rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.textInput:focus,
+.textArea:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--travel-accent);
+}
+
+.textArea {
+  min-height: 4rem;
+  resize: vertical;
+}
+
+.segmentForm {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-primary);
+  padding-top: 1rem;
+}
+
+.inlineRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.smallInput {
+  flex: 1;
+  min-width: 140px;
+  border-radius: 8px;
+  border: 1px solid var(--border-primary);
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+}
+
+.actionButton {
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(120deg, var(--travel-accent-2), var(--travel-accent));
+  color: #031029;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.segmentPreview {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.segmentBadge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.15);
+  font-size: 0.8rem;
+  color: var(--travel-text);
+}
+
+.formActions {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.helperText {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-primary);
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.filterPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filterPill {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.filterActive {
+  background: rgba(125, 211, 252, 0.18);
+  border-color: var(--travel-accent);
+  color: var(--travel-text);
+}
+
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.select {
+  border-radius: 10px;
+  border: 1px solid var(--border-primary);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--travel-text);
+  padding: 0.65rem 0.8rem;
+}
+
+.viewToggle {
+  display: flex;
+  background: var(--surface-hover);
+  border-radius: 999px;
+  padding: 0.2rem;
+}
+
+.viewButton {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.viewActive {
+  background: var(--shadow-glow);
+  color: var(--text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 1.5rem;
+}
+
+.mainColumn {
+  background: var(--travel-card);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--travel-border);
+  min-height: 460px;
+  box-shadow: var(--travel-shadow);
+}
+
+.listView {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.emptyState {
+  color: var(--text-muted);
+}
+
+.tripCard {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 30px rgba(5, 10, 25, 0.6);
+}
+
+.tripHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tripMeta {
+  color: var(--text-muted);
+  margin: 0.25rem 0 0;
+}
+
+.tripActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.linkButton {
+  border: none;
+  background: none;
+  color: var(--color-pulse-accent);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tripNote {
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.segmentList {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.segmentRow {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border-left: 3px solid var(--travel-accent);
+}
+
+.segmentLocation {
+  display: inline-block;
+  margin-right: 0.6rem;
+  color: var(--text-primary);
+}
+
+.segmentMode {
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.segmentDates {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.segmentNotes {
+  margin: 0.25rem 0 0;
+  color: var(--text-secondary);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.timelineCard {
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 45px rgba(3, 6, 20, 0.4);
+}
+
+.timelineTrip {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.timelineSegment {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.timelineMode {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.timelineDates {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mapCard,
+.calendarCard,
+.clockSection {
+  background: var(--travel-card);
+  border-radius: 16px;
+  border: 1px solid var(--travel-border);
+  padding: 1rem;
+  box-shadow: inset 0 0 30px rgba(125, 211, 252, 0.08);
+}
+
+.mapSvg {
+  width: 100%;
+  height: 120px;
+}
+
+.pinLabel {
+  font-size: 0.55rem;
+  fill: var(--text-muted);
+}
+
+.mapLegend {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.mapLegend span {
+  font-size: 0.75rem;
+  background: rgba(29, 78, 216, 0.25);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  color: var(--travel-text);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.calendarDay {
+  border: none;
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  padding: 0.6rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.calendarHighlighted {
+  background: rgba(125, 211, 252, 0.3);
+  color: var(--travel-accent);
+}
+
+.calendarToday {
+  box-shadow: 0 0 0 1px var(--border-primary);
+}
+
+.clockGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.clockCard {
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.clockTime {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.clockLabel,
+.clockWeather {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.pulseLink {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(120deg, var(--travel-accent), var(--travel-accent-2));
+  color: #031029;
+  text-align: center;
+  font-weight: 600;
+}
+
+.drawer {
+  margin-top: 2rem;
+  background: var(--travel-card);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid var(--travel-border);
+  box-shadow: var(--travel-shadow);
+}
+
+.drawerHeader {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.drawerTitle {
+  flex: 2;
+  border-radius: 8px;
+  border: 1px solid var(--border-primary);
+  background: var(--surface-hover);
+  padding: 0.5rem 0.75rem;
+  color: var(--text-primary);
+}
+
+.drawerSelect {
+  border-radius: 8px;
+  border: 1px solid var(--border-primary);
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  padding: 0.4rem 0.7rem;
+}
+
+.drawerSection {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-primary);
+  padding-top: 0.75rem;
+}
+
+.itineraryList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0;
+  color: var(--text-secondary);
+}
+
+.attachmentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.attachmentItem {
+  background: var(--surface-hover);
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.attachmentPreview {
+  border-radius: 6px;
+  max-width: 200px;
+  max-height: 120px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

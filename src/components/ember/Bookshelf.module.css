@@ -1,0 +1,469 @@
+/* ===========================================
+   BOOK SHELF - Compact Shelf with Wooden Frame
+   =========================================== */
+
+.shelf {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 130px;
+    min-width: 100px;
+    flex: 0 0 auto;
+    transition: all 0.2s ease;
+    padding: 0 8px;
+    margin-left: 12px;
+}
+
+.shelf.dragging {
+    opacity: 0.4;
+    transform: scale(0.98);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.shelf.dragOver {
+    background: rgba(224, 159, 62, 0.12);
+    transform: translateY(4px);
+}
+
+.shelf.dragOver::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -4px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #E09F3E, #E09F3E, transparent);
+    border-radius: 2px;
+    z-index: 10;
+    animation: pulseGlow 1s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; box-shadow: 0 0 8px rgba(224, 159, 62, 0.6); }
+}
+
+/* Wooden frame sides */
+.frameLeft,
+.frameRight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: linear-gradient(
+        90deg,
+        #4A3426 0%,
+        #6B4423 40%,
+        #7A4F2B 50%,
+        #6B4423 60%,
+        #4A3426 100%
+    );
+    z-index: 4;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.frameLeft {
+    left: 0;
+    border-left: 1px solid #8B5A2B;
+}
+
+.frameRight {
+    right: 0;
+    border-right: 1px solid #3A2615;
+}
+
+/* Back panel */
+.shelfBack {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    right: 8px;
+    bottom: 14px;
+    background: 
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.15) 0%,
+            transparent 10%,
+            transparent 90%,
+            rgba(0, 0, 0, 0.1) 100%
+        ),
+        linear-gradient(
+            135deg,
+            #D4C4A8 0%,
+            #E6D6C2 40%,
+            #DBC9AF 100%
+        );
+    box-shadow: inset 0 5px 12px rgba(0, 0, 0, 0.18);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Drag handle */
+.dragHandle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    cursor: grab;
+    color: #6B5344;
+    padding: 12px 4px;
+    border-radius: 0 4px 4px 0;
+    background: linear-gradient(
+        90deg,
+        #5C3A21 0%,
+        #6B4423 50%,
+        #5C3A21 100%
+    );
+    z-index: 6;
+    transition: all 0.15s;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.dragHandle:hover {
+    color: #E09F3E;
+    background: linear-gradient(
+        90deg,
+        #6B4423 0%,
+        #7A4F2B 50%,
+        #6B4423 100%
+    );
+    padding: 12px 6px;
+}
+
+.dragHandle:active {
+    cursor: grabbing;
+    background: #7A4F2B;
+}
+
+/* Action buttons container */
+.shelfActions {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 20;
+}
+
+/* Shared button base */
+.addBtn,
+.deleteBtn,
+.tagBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(42, 31, 23, 0.9);
+    border: 1px solid rgba(139, 115, 85, 0.4);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+/* Add button */
+.addBtn {
+    color: #81C784;
+}
+
+.addBtn:hover {
+    background: rgba(76, 175, 80, 0.2);
+    border-color: #81C784;
+    transform: scale(1.08);
+}
+
+/* Delete button */
+.deleteBtn {
+    color: #B8A48B;
+}
+
+.deleteBtn:hover {
+    background: rgba(220, 38, 38, 0.2);
+    color: #ef4444;
+    border-color: #ef4444;
+    transform: scale(1.08);
+}
+
+.deleteBtn.deleteConfirm {
+    background: #dc2626;
+    color: white;
+    border-color: #dc2626;
+    animation: pulseDelete 1s infinite;
+}
+
+@keyframes pulseDelete {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6); }
+    50% { box-shadow: 0 0 0 5px rgba(220, 38, 38, 0); }
+}
+
+/* Tag button - explicit override */
+.tagBtn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    background: rgba(42, 31, 23, 0.9) !important;
+    border: 1px solid rgba(224, 159, 62, 0.5) !important;
+    border-radius: 4px !important;
+    color: #E09F3E !important;
+    cursor: pointer !important;
+    gap: 3px;
+    padding: 0 6px;
+}
+
+.tagBtn:hover {
+    background: rgba(224, 159, 62, 0.2) !important;
+    border-color: #E09F3E !important;
+    transform: scale(1.05);
+}
+
+.tagBtn.hasTag {
+    background: rgba(224, 159, 62, 0.25) !important;
+    border-color: #E09F3E !important;
+}
+
+.tagBadge {
+    font-size: 0.55rem;
+    font-weight: 600;
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #E09F3E;
+}
+
+/* Tag dropdown */
+.tagDropdown {
+    position: absolute;
+    top: 34px;
+    right: 14px;
+    background: #2A1F17;
+    border: 1px solid #5C3A21;
+    border-radius: 6px;
+    padding: 6px;
+    z-index: 20;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tagInput {
+    width: 100%;
+    padding: 6px 8px;
+    background: #1B1612;
+    border: 1px solid #5C3A21;
+    border-radius: 4px;
+    color: #F5EAD9;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.tagInput:focus {
+    border-color: #E09F3E;
+}
+
+.tagInput::placeholder {
+    color: #6B5344;
+}
+
+.tagSuggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 6px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.tagSuggestion {
+    padding: 4px 8px;
+    background: transparent;
+    border: none;
+    border-radius: 3px;
+    color: #C9A46A;
+    font-size: 0.75rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.tagSuggestion:hover {
+    background: rgba(224, 159, 62, 0.15);
+    color: #E09F3E;
+}
+
+/* Books area */
+.booksArea {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 12px 0 12px;
+    position: relative;
+    z-index: 2;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    min-width: 0;
+}
+
+.booksArea::-webkit-scrollbar {
+    display: none;
+}
+
+/* Books row */
+.booksRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+}
+
+/* Book slot for drag & drop */
+.bookSlot {
+    position: relative;
+    cursor: grab;
+    transition: transform 0.12s ease;
+}
+
+.bookSlot:active {
+    cursor: grabbing;
+}
+
+.bookSlot.bookDragOver {
+    transform: translateX(5px);
+}
+
+.bookSlot.bookDragOver::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #E09F3E;
+    border-radius: 1px;
+    z-index: 10;
+}
+
+/* Empty shelf */
+.emptyShelf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    min-width: 80px;
+}
+
+.emptyAddBtn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 12px;
+    background: rgba(92, 58, 33, 0.5);
+    border: 1px solid #6B4423;
+    border-radius: 12px;
+    color: #C9A46A;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.emptyAddBtn:hover {
+    background: #6B4423;
+    color: #E8D5B7;
+}
+
+/* Shelf plank with series name */
+.shelfPlank {
+    height: 14px;
+    margin: 0 8px;
+    background: linear-gradient(
+        180deg,
+        #9C6A3E 0%,
+        #8B5A2B 20%,
+        #7A4F2B 50%,
+        #6B4423 100%
+    );
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.35),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.seriesName {
+    font-family: 'Georgia', serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: rgba(245, 234, 217, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .shelf {
+        min-height: 110px;
+        min-width: 90px;
+        padding: 0 6px;
+        margin-left: 8px;
+    }
+
+    .frameLeft,
+    .frameRight {
+        width: 6px;
+    }
+
+    .shelfBack {
+        left: 6px;
+        right: 6px;
+        bottom: 12px;
+    }
+
+    .dragHandle {
+        padding: 8px 3px;
+    }
+
+    .shelfActions {
+        right: 10px;
+        top: 4px;
+        gap: 3px;
+    }
+
+    .addBtn,
+    .deleteBtn,
+    .tagBtn {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+
+    .booksArea {
+        padding: 16px 10px 0 10px;
+    }
+
+    .shelfPlank {
+        height: 12px;
+        margin: 0 6px;
+    }
+
+    .seriesName {
+        font-size: 0.55rem;
+    }
+}
